@@ -1,12 +1,26 @@
 name: ${project.name}
 version: ${project.version}
 author: totemo
-authors: [totemo]
+authors: []
 description: ${project.description}
 website: ${project.url}
 main: nu.nerd.limitspawneggs.LimitSpawnEggs
+api-version: 1.13
 
-permissions: {}
+permissions:
+  limitspawneggs.bypass:
+    description: Permission to bypass spawn egg use restrictions.
+    default: op
+  
+  limitspawneggs.console:
+    description: Permission to reload the configuration (requires console access).
+    default: op
 
-commands: {}
+commands:
+  limitspawneggs:
+    description: ${project.name} administrative command.
+    permission: limitspawneggs.console
+    usage: |
 
+      §e/<command> help§f - Show usage help.
+      §e/<command> reload§f - Reload the configuration.
